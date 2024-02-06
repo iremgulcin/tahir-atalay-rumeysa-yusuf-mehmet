@@ -1,8 +1,5 @@
 ---
-# For reference on model card metadata, see the spec: https://github.com/huggingface/hub-docs/blob/main/modelcard.md?plain=1
-# Doc / guide: https://huggingface.co/docs/hub/model-cards
-{{ card_data }}
----
+# MODEL CARD
 
 # Model Card for {{ model_id | default("Model ID", true) }}
 
@@ -19,11 +16,9 @@
 {{ model_description | default("", true) }}
 
 - **Developed by:** {{ developers | default("[More Information Needed]", true)}}
-- **Funded by [optional]:** {{ funded_by | default("[More Information Needed]", true)}}
-- **Shared by [optional]:** {{ shared_by | default("[More Information Needed]", true)}}
+- **Model date:** {{ model_date | default("[More Information Needed]", true)}}
 - **Model type:** {{ model_type | default("[More Information Needed]", true)}}
-- **Language(s) (NLP):** {{ language | default("[More Information Needed]", true)}}
-- **License:** {{ license | default("[More Information Needed]", true)}}
+- **Language(s):** {{ language | default("[More Information Needed]", true)}}
 - **Finetuned from model [optional]:** {{ base_model | default("[More Information Needed]", true)}}
 
 ### Model Sources [optional]
@@ -121,7 +116,7 @@ Use the code below to get started with the model.
 
 #### Metrics
 
-<!-- These are the evaluation metrics being used, ideally with a description of why. -->
+<!-- These are the evaluation metrics being used, ideally with a description of why. Decision tresholds, model performance measures -->
 
 {{ testing_metrics | default("[More Information Needed]", true)}}
 
@@ -139,17 +134,6 @@ Use the code below to get started with the model.
 
 {{ model_examination | default("[More Information Needed]", true)}}
 
-## Environmental Impact
-
-<!-- Total emissions (in grams of CO2eq) and additional considerations, such as electricity usage, go here. Edit the suggested text below accordingly -->
-
-Carbon emissions can be estimated using the [Machine Learning Impact calculator](https://mlco2.github.io/impact#compute) presented in [Lacoste et al. (2019)](https://arxiv.org/abs/1910.09700).
-
-- **Hardware Type:** {{ hardware_type | default("[More Information Needed]", true)}}
-- **Hours used:** {{ hours_used | default("[More Information Needed]", true)}}
-- **Cloud Provider:** {{ cloud_provider | default("[More Information Needed]", true)}}
-- **Compute Region:** {{ cloud_region | default("[More Information Needed]", true)}}
-- **Carbon Emitted:** {{ co2_emitted | default("[More Information Needed]", true)}}
 
 ## Technical Specifications [optional]
 
@@ -173,13 +157,6 @@ Carbon emissions can be estimated using the [Machine Learning Impact calculator]
 
 <!-- If there is a paper or blog post introducing the model, the APA and Bibtex information for that should go in this section. -->
 
-**BibTeX:**
-
-{{ citation_bibtex | default("[More Information Needed]", true)}}
-
-**APA:**
-
-{{ citation_apa | default("[More Information Needed]", true)}}
 
 ## Glossary [optional]
 
@@ -191,10 +168,6 @@ Carbon emissions can be estimated using the [Machine Learning Impact calculator]
 
 {{ more_information | default("[More Information Needed]", true)}}
 
-## Model Card Authors [optional]
 
-{{ model_card_authors | default("[More Information Needed]", true)}}
 
-## Model Card Contact
 
-{{ model_card_contact | default("[More Information Needed]", true)}}
