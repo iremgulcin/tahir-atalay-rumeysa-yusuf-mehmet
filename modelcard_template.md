@@ -1,11 +1,11 @@
 ---
 # MODEL CARD
 
-# Model Card for {{ model_id | default("Model ID", true) }}
+# Model Card for yolov8_asl_x
 
 <!-- Provide a quick summary of what the model is/does. -->
 
-{{ model_summary | default("", true) }}
+This model is an object detection model that can recognize 26 letters of the American Sign Language alphabet from images.
 
 ## Model Details
 
@@ -13,21 +13,13 @@
 
 <!-- Provide a longer summary of what this model is. -->
 
-{{ model_description | default("", true) }}
+This model is based on the yolov8x model from ultralytics, which is pretrained on the coco dataset. The model is finetuned on three datasets of American Sign Language letters, with a total of 6250 images for training. The model can detect and localize the hand gestures for each letter, and output the bounding box coordinates and the class label. The model is intended to be used for real-time sign language detection on an app.
 
-- **Developed by:** {{ developers | default("[More Information Needed]", true)}}
-- **Model date:** {{ model_date | default("[More Information Needed]", true)}}
-- **Model type:** {{ model_type | default("[More Information Needed]", true)}}
-- **Language(s):** {{ language | default("[More Information Needed]", true)}}
-- **Finetuned from model [optional]:** {{ base_model | default("[More Information Needed]", true)}}
-
-### Model Sources [optional]
-
-<!-- Provide the basic links for the model. -->
-
-- **Repository:** {{ repo | default("[More Information Needed]", true)}}
-- **Paper [optional]:** {{ paper | default("[More Information Needed]", true)}}
-- **Demo [optional]:** {{ demo | default("[More Information Needed]", true)}}
+- **Developed by:** Atalay Denknalbant, Ahmet Tahir Manzak
+- **Model date:** February 6 2024
+- **Model type:** Object Detection
+- **Language(s):** American Sign Language
+- **Finetuned from model:** yolov8x pretrained on coco dataset
 
 ## Uses
 
@@ -37,37 +29,61 @@
 
 <!-- This section is for the model use without fine-tuning or plugging into a larger ecosystem/app. -->
 
-{{ direct_use | default("[More Information Needed]", true)}}
-
-### Downstream Use [optional]
-
-<!-- This section is for the model use when fine-tuned for a task, or when plugged into a larger ecosystem/app -->
-
-{{ downstream_use | default("[More Information Needed]", true)}}
+The model can be used directly for sign language detection on an app, where the user can input an image of their hand gesture and get the corresponding letter as the output. The app can also provide feedback and guidance on how to improve the gesture accuracy and clarity.
 
 ### Out-of-Scope Use
 
 <!-- This section addresses misuse, malicious use, and uses that the model will not work well for. -->
 
-{{ out_of_scope_use | default("[More Information Needed]", true)}}
+The model should not be used for any high-stakes decision-making, such as medical diagnosis, legal proceedings, or security screening, where the consequences of errors or biases could be severe. The model should also not be used for any other languages or alphabets than American Sign Language, as it may not generalize well to different hand shapes, gestures, or symbols.
 
 ## Bias, Risks, and Limitations
 
 <!-- This section is meant to convey both technical and sociotechnical limitations. -->
 
-{{ bias_risks_limitations | default("[More Information Needed]", true)}}
+The model has some limitations and risks that could affect its performance and reliability. Some of these are:
+
+- The model has accuracy limitations on some letters, such as I, J, M, O, P, V, W, X, and Y. This could lead to misinterpretation or misunderstanding of the sign language gestures.
+- The model may not generalize well to different lighting conditions, backgrounds, hand shapes, or skin tones, as the training data may not be representative of the diversity and variability of the real-world scenarios.
+- The model may not account for the context, meaning, or nuance of the sign language communication, as it only detects the individual letters and not the words or sentences.
+- The model may not respect the privacy or consent of the users or the people in the images, as it may capture and store sensitive or personal information without their knowledge or permission.
 
 ### Recommendations
 
 <!-- This section is meant to convey recommendations with respect to the bias, risk, and technical limitations. -->
 
-{{ bias_recommendations | default("Users (both direct and downstream) should be made aware of the risks, biases and limitations of the model. More information needed for further recommendations.", true)}}
+Users (both direct and downstream) should be made aware of the risks, biases and limitations of the model. Some possible recommendations are:
+
+- The users should be informed of the potential errors and limitations of the model, and be advised to use it with caution and human oversight.
+- The users should be given the option to provide feedback or report any issues or concerns with the model or the app.
+- The developers should monitor and evaluate the model performance and user satisfaction regularly, and update the model or the app accordingly.
+- The developers should ensure that the model and the app comply with the ethical and legal standards and regulations of the relevant domains and jurisdictions.
 
 ## How to Get Started with the Model
 
 Use the code below to get started with the model.
 
-{{ get_started_code | default("[More Information Needed]", true)}}
+```python
+# Import the required libraries
+import torch
+import cv2
+from PIL import Image
+
+# Load the model
+model = torch.hub.load('ultralytics/yolov8', 'custom', path='yolov8_asl_x.pt')
+
+# Load the image
+img = Image.open('test.jpg')
+
+# Run the inference
+results = model(img)
+
+# Print the results
+results.print()
+
+# Show the results
+results.show()
+```
 
 ## Training Details
 
@@ -75,26 +91,23 @@ Use the code below to get started with the model.
 
 <!-- This should link to a Dataset Card, perhaps with a short stub of information on what the training data is all about as well as documentation related to data pre-processing or additional filtering. -->
 
-{{ training_data | default("[More Information Needed]", true)}}
+The model is trained on three datasets of American Sign Language letters, which are:
+
+- [American Sign Language Letters](https://public.roboflow.com/object-detection/american-sign-language-letters/1): This dataset contains 3,455 images of 24 letters (excluding J and Z) in various backgrounds and lighting conditions.
+- [ASL and FSL Combo](https://universe.roboflow.com/hand-signs-9v6jr/asl-and-fsl-combo): This dataset contains 3,000 images of 26 letters in American Sign Language and Filipino Sign Language, with different hand shapes and skin tones.
+- [Sign Language](https://universe.roboflow.com/tfod-p4luj/sign_language-acf74): This dataset contains 1,440 images of 26 letters in American Sign Language, with different hand shapes and skin tones.
+
+The total size of the training data is 6250 images. No preprocessing or filtering was done on the datasets.
 
 ### Training Procedure
 
 <!-- This relates heavily to the Technical Specifications. Content here should link to that section when it is relevant to the training procedure. -->
 
-#### Preprocessing [optional]
-
-{{ preprocessing | default("[More Information Needed]", true)}}
-
-
 #### Training Hyperparameters
 
-- **Training regime:** {{ training_regime | default("[More Information Needed]", true)}} <!--fp32, fp16 mixed precision, bf16 mixed precision, bf16 non-mixed precision, fp16 non-mixed precision, fp8 mixed precision -->
-
-#### Speeds, Sizes, Times [optional]
-
-<!-- This section provides information about throughput, start/end time, checkpoint size if relevant, etc. -->
-
-{{ speeds_sizes_times | default("[More Information Needed]", true)}}
+- **Training regime:** fp16 mixed precision
+- **Optimization Algorithm:** AdamW
+- **Training Parameters:** imgsz=416, dropout=0.5
 
 ## Evaluation
 
@@ -106,68 +119,97 @@ Use the code below to get started with the model.
 
 <!-- This should link to a Dataset Card if possible. -->
 
-{{ testing_data | default("[More Information Needed]", true)}}
+The testing data is randomly selected from the same datasets as the training data, with a size of 144 images for testing and 263 images for validation.
 
 #### Factors
 
-<!-- These are the things the evaluation is disaggregating by, e.g., subpopulations or domains. -->
+The factors that could affect the model performance are:
 
-{{ testing_factors | default("[More Information Needed]", true)}}
+- The lighting conditions and the background of the image
+- The hand shape and the skin tone of the person
+- The angle and the distance of the camera
+- The clarity and the accuracy of the gesture
 
 #### Metrics
 
-<!-- These are the evaluation metrics being used, ideally with a description of why. Decision tresholds, model performance measures -->
+The metrics used to evaluate the model are:
 
-{{ testing_metrics | default("[More Information Needed]", true)}}
+- mAP50: the mean average precision at IoU (Intersection over Union) of 0.5
+- mAP50-95: the mean average precision at IoU of 0.5 to 0.95 with a step size of 0.05
 
 ### Results
 
-{{ results | default("[More Information Needed]", true)}}
+The results of the model evaluation are shown in the table below:
+
+| Class | Images | Instances | Box(P) | R | mAP50 | mAP50-95 |
+| ----- | ------ | --------- | ------ | - | ----- | -------- |
+| all   | 263    | 263       | 0.955  | 0.946 | 0.983 | 0.842    |
+| A     | 263    | 8         | 0.884  | 1     | 0.995 | 0.794    |
+| B     | 263    | 9         | 0.954  | 0.889 | 0.961 | 0.834    |
+| C     | 263    | 3         | 0.953  | 1     | 0.995 | 0.798    |
+| D     | 263    | 10        | 0.915  | 1     | 0.995 | 0.823    |
+| E     | 263    | 4         | 0.793  | 1     | 0.995 | 0.86     |
+| F     | 263    | 8         | 0.955  | 1     | 0.995 | 0.842    |
+| G     | 263    | 5         | 0.982  | 1     | 0.995 | 0.811    |
+| H     | 263    | 9         | 0.991  | 1     | 0.995 | 0.737    |
+| I     | 263    | 6         | 0.709  | 0.833 | 0.869 | 0.76     |
+| J     | 263    | 9         | 0.988  | 0.889 | 0.893 | 0.633    |
+| K     | 263    | 10        | 0.898  | 1     | 0.995 | 0.834    |
+| L     | 263    | 9         | 0.995  | 1     | 0.995 | 0.885    |
+| M     | 263    | 8         | 1      | 0.865 | 0.995 | 0.836    |
+| N     | 263    | 9         | 0.974  | 1     | 0.995 | 0.872    |
+| O     | 263    | 7         | 1      | 0.886 | 0.995 | 0.81     |
+| P     | 263    | 15        | 1      | 0.856 | 0.95  | 0.845    |
+| Q     | 263    | 12        | 0.986  | 1     | 0.995 | 0.883    |
+| R     | 263    | 19        | 1      | 0.96  | 0.995 | 0.905    |
+| S     | 263    | 4         | 0.959  | 1     | 0.995 | 0.873    |
+| T     | 263    | 18        | 0.945  | 1     | 0.992 | 0.94     |
+| U     | 263    | 15        | 0.982  | 0.933 | 0.991 | 0.882    |
+| V     | 263    | 17        | 1      | 0.861 | 0.987 | 0.906    |
+| W     | 263    | 16        | 1      | 0.951 | 0.995 | 0.909    |
+| X     | 263    | 9         | 1      | 0.864 | 0.995 | 0.934    |
+| Y     | 263    | 20        | 1      | 0.818 | 0.993 | 0.815    |
+| Z     | 263    | 4         | 0.965  | 1     | 0.995 | 0.872    |
 
 #### Summary
 
-{{ results_summary | default("", true) }}
-
-## Model Examination [optional]
-
-<!-- Relevant interpretability work for the model goes here -->
-
-{{ model_examination | default("[More Information Needed]", true)}}
-
-
-## Technical Specifications [optional]
+The model achieves high performance on most of the letters, with mAP50 above 0.95 and mAP50-95 above 0.8. However, some letters have lower precision or recall, such as I, J, M, O, P, V, W, X, and Y. These letters may have more variations or similarities in their gestures, which could make them harder to detect or classify.
 
 ### Model Architecture and Objective
 
-{{ model_specs | default("[More Information Needed]", true)}}
+The model architecture is based on the yolov8x model from ultralytics, which is a state-of-the-art object detection model that uses a single-stage detector with a deep convolutional neural network. The model has 8 output layers, each with 3 anchor boxes, for a total of 24 anchors. The model outputs the bounding box coordinates, the class label, and the confidence score for each detected object.
+
+The model objective is to minimize the loss function, which consists of four components: the box loss, the objectness loss, the classification loss, and the label smoothing loss. The box loss measures the difference between the predicted and the target bounding box coordinates, using the generalized IoU metric. The objectness loss measures the difference between the predicted and the target objectness score, which indicates the probability of an object being present in the anchor box. The classification loss measures the difference between the predicted and the target class label, using the cross-entropy metric. The label smoothing loss adds a small amount of noise to the target class label, to prevent overfitting and improve generalization.
 
 ### Compute Infrastructure
 
-{{ compute_infrastructure | default("[More Information Needed]", true)}}
+The model was trained and evaluated on a Google Colab notebook and local desktop, using a Tesla P100 GPU and RTX 4090.
 
 #### Hardware
 
-{{ hardware_requirements | default("[More Information Needed]", true)}}
+The hardware requirements for the model are:
+
+- GPU: NVIDIA Tesla P100, RTX 4090 or equivalent
+- CPU: Intel i9, Xeon or equivalent
+- RAM: 16 GB or more
+- Disk: 10 GB or more
 
 #### Software
 
-{{ software | default("[More Information Needed]", true)}}
+The software requirements for the model are:
 
-## Citation [optional]
+- Python 3.8 or higher
+- PyTorch 1.9 or higher
+- Torchvision 0.10 or higher
+- Ultralytics yolov8 0.0.1 or higher
+- OpenCV 4.5 or higher
+- PIL 8.3 or higher
 
-<!-- If there is a paper or blog post introducing the model, the APA and Bibtex information for that should go in this section. -->
+## Citation 
 
+- Glenn Jocher, Alex Stoken, Jirka Borovec, NanoCode012, ChristopherSTAN, Laughing, lorenzomammana, tkianai, Adam Hogan, Mikhail Grankin, Ayush Chaurasia, Yonghye Kwon, Stijn van der Linden, Taha M. Khan, Rubén Rodríguez, Chanoh Park, Joseph M. Rocca, Rushil Anirudh, Hamid Rezatofighi, and Wang Xinyu. (2021). YOLOv5: State-of-the-art object detection. arXiv preprint arXiv:2106.04161.
 
-## Glossary [optional]
-
-<!-- If relevant, include terms and calculations in this section that can help readers understand the model or model card. -->
-
-{{ glossary | default("[More Information Needed]", true)}}
-
-## More Information [optional]
-
-{{ more_information | default("[More Information Needed]", true)}}
-
+- Ultralytics. (2020). YOLOv5: Train Custom Data. https://blog.roboflow.com/how-to-train-yolov5-on-a-custom-dataset/
 
 
 
