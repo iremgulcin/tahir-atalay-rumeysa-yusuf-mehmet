@@ -70,7 +70,7 @@ import cv2
 from PIL import Image
 
 # Load the model
-model = torch.hub.load('ultralytics/yolov8', 'custom', path='yolov8_asl_x.pt')
+model = torch.hub.load('ultralytics/yolov8', 'custom', path='yolov8_asl_s.pt')
 
 # Load the image
 img = Image.open('test.jpg')
