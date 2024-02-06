@@ -1,1 +1,1 @@
-# tahir-atalay-rumeysa-yusuf-mehmet
+# Sign Language Translator
