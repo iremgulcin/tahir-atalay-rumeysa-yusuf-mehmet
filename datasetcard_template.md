@@ -10,7 +10,7 @@ Dataset Description
 This dataset is a combination of three datasets from Roboflow Universe:
 
 - [American Sign Language Letters Object Detection Dataset](^5^): This dataset contains 3,455 images of 24 letters (excluding J and Z) in various backgrounds and lighting conditions.
-- [ASL And FSL combo Object Detection Dataset](^1^): This dataset contains 3,000 images of 26 letters in American Sign Language and Filipino Sign Language, with different hand shapes and skin tones.
+- [ASL And FSL combo Object Detection Dataset](^(https://universe.roboflow.com/hand-signs-9v6jr/asl-and-fsl-combo)^): This dataset contains 2128 images of 26 letters in American Sign Language and Filipino Sign Language, with different hand shapes and skin tones.
 - [Sign_language Object Detection Dataset](^13^): This dataset contains 1,440 images of 26 letters in American Sign Language, with different hand shapes and skin tones.
 
 The images are in JPG format and the annotations are in COCO JSON format.
