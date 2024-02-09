@@ -208,8 +208,3 @@ The software requirements for the model are:
 ## Citation 
 
 - Glenn Jocher, Alex Stoken, Jirka Borovec, NanoCode012, ChristopherSTAN, Laughing, lorenzomammana, tkianai, Adam Hogan, Mikhail Grankin, Ayush Chaurasia, Yonghye Kwon, Stijn van der Linden, Taha M. Khan, Rubén Rodríguez, Chanoh Park, Joseph M. Rocca, Rushil Anirudh, Hamid Rezatofighi, and Wang Xinyu. (2021). YOLOv5: State-of-the-art object detection. arXiv preprint arXiv:2106.04161.
-
-- Ultralytics. (2020). YOLOv5: Train Custom Data. https://blog.roboflow.com/how-to-train-yolov5-on-a-custom-dataset/
-
-
-
