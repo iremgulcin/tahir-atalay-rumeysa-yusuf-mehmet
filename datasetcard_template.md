@@ -3,27 +3,27 @@
 ---
 
 Dataset Card for Sign Language Letters Detection
-This dataset contains images of hand signs for the letters of the alphabet in American Sign Language (ASL) and French Sign Language (FSL). The goal is to train a computer vision model that can detect and recognize the sign language letters from the images.
+This dataset contains images of hand signs for the letters of the alphabet in American Sign Language (ASL) and Filipino Sign Language (FSL). The goal is to train a computer vision model that can detect and recognize the sign language letters from the images.
 
 Dataset Details
 Dataset Description
 This dataset is a combination of three datasets from Roboflow Universe:
 
-- [American Sign Language Letters](https://public.roboflow.com/object-detection/american-sign-language-letters/1): This dataset contains 3,455 images of 26 letters in various backgrounds and lighting conditions.
-- [ASL and FSL Combo](https://universe.roboflow.com/hand-signs-9v6jr/asl-and-fsl-combo): This dataset contains 3,000 images of 26 letters in American Sign Language and Filipino Sign Language, with different hand shapes and skin tones.
-- [Sign Language](https://universe.roboflow.com/tfod-p4luj/sign_language-acf74): This dataset contains 1,440 images of 26 letters in American Sign Language, with different hand shapes and skin tones.
+- [American Sign Language Letters](https://public.roboflow.com/object-detection/american-sign-language-letters/1): This dataset contains 1728 images of 26 letters in various backgrounds and lighting conditions.
+- [ASL and FSL Combo](https://universe.roboflow.com/hand-signs-9v6jr/asl-and-fsl-combo): This dataset contains 2128 images of 26 letters in American Sign Language and Filipino Sign Language, with different hand shapes and skin tones.
+- [Sign Language](https://universe.roboflow.com/tfod-p4luj/sign_language-acf74): This dataset contains 5121 images of 26 letters in American Sign Language, with different hand shapes and skin tones.
 
-The images are in JPG format and the annotations are in COCO JSON format.
+The images are in JPG format and the annotations are in JSON format.
 
 Curated by: Roboflow users
 License: Public Domain
-Repository: [Roboflow Universe](^17^)
+Repository: [Roboflow Universe](https://universe.roboflow.com)
 Uses
 Direct Use
 This dataset can be used to train or evaluate a computer vision model that can detect and recognize sign language letters from images. Such a model can be useful for applications such as sign language translation, education, and accessibility.
 
 Dataset Structure
-The dataset consists of 6657 images and a JSON file with the annotations. The images are divided into train, test, and valid splits. The JSON file contains the following fields:
+The dataset consists of 6879 images and a JSON file with the annotations. The images are divided into train, test, and valid splits. The JSON file contains the following fields:
 
 - info: a dictionary with information about the dataset, such as version, description, and URL.
 - licenses: a list of dictionaries with information about the licenses of the images, such as name, URL, and id.
