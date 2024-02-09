@@ -93,11 +93,11 @@ results.show()
 
 The model is trained on three datasets of American Sign Language letters, which are:
 
-- [American Sign Language Letters](https://public.roboflow.com/object-detection/american-sign-language-letters/1): This dataset contains 3,455 images of 26 letters in various backgrounds and lighting conditions.
-- [ASL and FSL Combo](https://universe.roboflow.com/hand-signs-9v6jr/asl-and-fsl-combo): This dataset contains 3,000 images of 26 letters in American Sign Language and Filipino Sign Language, with different hand shapes and skin tones.
-- [Sign Language](https://universe.roboflow.com/tfod-p4luj/sign_language-acf74): This dataset contains 1,440 images of 26 letters in American Sign Language, with different hand shapes and skin tones.
+- [American Sign Language Letters](https://public.roboflow.com/object-detection/american-sign-language-letters/1): This dataset contains 1728 images of 26 letters in various backgrounds and lighting conditions.
+- [ASL and FSL Combo](https://universe.roboflow.com/hand-signs-9v6jr/asl-and-fsl-combo): This dataset contains 2128 images of 26 letters in American Sign Language and Filipino Sign Language, with different hand shapes and skin tones.
+- [Sign Language](https://universe.roboflow.com/tfod-p4luj/sign_language-acf74): This dataset contains 5121 images of 26 letters in American Sign Language, with different hand shapes and skin tones.
 
-The total size of the training data is 6250 images. No preprocessing or filtering was done on the datasets.
+The total size of the training data is 6455 images. No preprocessing or filtering was done on the datasets.
 
 ### Training Procedure
 
