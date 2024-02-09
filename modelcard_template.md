@@ -43,7 +43,7 @@ The model should not be used for any high-stakes decision-making, such as medica
 
 The model has some limitations and risks that could affect its performance and reliability. Some of these are:
 
-- The model has accuracy limitations on some letters, such as I, J, M, O, P, V, W, X, and Y. This could lead to misinterpretation or misunderstanding of the sign language gestures.
+- The model has accuracy limitations on some letters, such as  J and Z. This could lead to misinterpretation or misunderstanding of the sign language gestures.
 - The model may not generalize well to different lighting conditions, backgrounds, hand shapes, or skin tones, as the training data may not be representative of the diversity and variability of the real-world scenarios.
 - The model may not account for the context, meaning, or nuance of the sign language communication, as it only detects the individual letters and not the words or sentences.
 - The model may not respect the privacy or consent of the users or the people in the images, as it may capture and store sensitive or personal information without their knowledge or permission.
