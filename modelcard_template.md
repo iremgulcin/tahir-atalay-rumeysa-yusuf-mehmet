@@ -13,7 +13,7 @@ This model is an object detection model that can recognize 26 letters of the Ame
 
 <!-- Provide a longer summary of what this model is. -->
 
-This model is based on the yolov8s model from ultralytics, which is pretrained on the coco dataset. The model is finetuned on three datasets of American Sign Language letters, with a total of 6250 images for training. The model can detect and localize the hand gestures for each letter, and output the bounding box coordinates and the class label. The model is intended to be used for real-time sign language detection on an app.
+This model is based on the yolov8s model from ultralytics, which is pretrained on the coco dataset. The model is finetuned on three datasets of American Sign Language letters, with a total of 6455 images for training. The model can detect and localize the hand gestures for each letter, and output the bounding box coordinates and the class label. The model is intended to be used for real-time sign language detection on an app.
 
 - **Developed by:** Atalay Denknalbant, Ahmet Tahir Manzak
 - **Model date:** February 6 2024
