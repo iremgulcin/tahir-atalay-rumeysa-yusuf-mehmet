@@ -23,7 +23,7 @@ Direct Use
 This dataset can be used to train or evaluate a computer vision model that can detect and recognize sign language letters from images. Such a model can be useful for applications such as sign language translation, education, and accessibility.
 
 Dataset Structure
-The dataset consists of 3878 images and a JSON file with the annotations. The images are divided into train, test, and valid splits. The JSON file contains the following fields:
+The dataset consists of 6657 images and a JSON file with the annotations. The images are divided into train, test, and valid splits. The JSON file contains the following fields:
 
 - info: a dictionary with information about the dataset, such as version, description, and URL.
 - licenses: a list of dictionaries with information about the licenses of the images, such as name, URL, and id.
