@@ -9,9 +9,9 @@ Dataset Details
 Dataset Description
 This dataset is a combination of three datasets from Roboflow Universe:
 
-- [American Sign Language Letters Object Detection Dataset](^5^): This dataset contains 3,455 images of 24 letters (excluding J and Z) in various backgrounds and lighting conditions.
-- [ASL And FSL combo Object Detection Dataset](^(https://universe.roboflow.com/hand-signs-9v6jr/asl-and-fsl-combo)^): This dataset contains 2128 images of 26 letters in American Sign Language and Filipino Sign Language, with different hand shapes and skin tones.
-- [Sign_language Object Detection Dataset](^13^): This dataset contains 1,440 images of 26 letters in American Sign Language, with different hand shapes and skin tones.
+- [American Sign Language Letters](https://public.roboflow.com/object-detection/american-sign-language-letters/1): This dataset contains 3,455 images of 26 letters in various backgrounds and lighting conditions.
+- [ASL and FSL Combo](https://universe.roboflow.com/hand-signs-9v6jr/asl-and-fsl-combo): This dataset contains 3,000 images of 26 letters in American Sign Language and Filipino Sign Language, with different hand shapes and skin tones.
+- [Sign Language](https://universe.roboflow.com/tfod-p4luj/sign_language-acf74): This dataset contains 1,440 images of 26 letters in American Sign Language, with different hand shapes and skin tones.
 
 The images are in JPG format and the annotations are in COCO JSON format.
 
@@ -36,9 +36,10 @@ Source Data
 Data Collection and Processing
 The data was collected and processed by the Roboflow users who created and shared the datasets. The data sources are:
 
-- [American Sign Language Letters Object Detection Dataset](^5^): The images were collected from various sources, such as YouTube videos, Google Images, and personal photos. The images were resized, cropped, and augmented using Roboflow. The annotations were created using Roboflow Annotate.
-- [ASL And FSL combo Object Detection Dataset](^1^): The images were collected from various sources, such as YouTube videos, Google Images, and personal photos. The images were resized, cropped, and augmented using Roboflow. The annotations were created using Roboflow Annotate.
-- [Sign_language Object Detection Dataset](^13^): The images were collected from various sources, such as YouTube videos, Google Images, and personal photos. The images were resized, cropped, and augmented using Roboflow. The annotations were created using Roboflow Annotate.
+
+- [American Sign Language Letters Dataset](https://public.roboflow.com/object-detection/american-sign-language-letters/1): The images were collected from various sources, such as YouTube videos, Google Images, and personal photos. The images were resized, cropped, and augmented using Roboflow. The annotations were created using Roboflow Annotate.
+- [ASL and FSL Combo Object Detection Dataset](https://universe.roboflow.com/hand-signs-9v6jr/asl-and-fsl-combo): The images were collected from various sources, such as YouTube videos, Google Images, and personal photos. The images were resized, cropped, and augmented using Roboflow. The annotations were created using Roboflow Annotate.
+- [Sign Language Object Detection Dataset](https://universe.roboflow.com/tfod-p4luj/sign_language-acf74): The images were collected from various sources, such as YouTube videos, Google Images, and personal photos. The images were resized, cropped, and augmented using Roboflow. The annotations were created using Roboflow Annotate.
 
 Features and the target
 The features are the images of hand signs for the letters of the alphabet in ASL and FSL. The target is the bounding box and the label of the sign language letter in each image.
