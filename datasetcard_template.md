@@ -2,89 +2,63 @@
 # Dataset Card
 ---
 
-# Dataset Card for {{ pretty_name | default("Dataset Name", true) }}
+Dataset Card for Sign Language Letters Detection
+This dataset contains images of hand signs for the letters of the alphabet in American Sign Language (ASL) and French Sign Language (FSL). The goal is to train a computer vision model that can detect and recognize the sign language letters from the images.
 
-<!-- Provide a quick summary of the dataset. -->
+Dataset Details
+Dataset Description
+This dataset is a combination of three datasets from Roboflow Universe:
 
-{{ dataset_summary | default("", true) }}
+- [American Sign Language Letters Object Detection Dataset](^5^): This dataset contains 3,455 images of 24 letters (excluding J and Z) in various backgrounds and lighting conditions.
+- [ASL And FSL combo Object Detection Dataset](^1^): This dataset contains 3,000 images of 26 letters in American Sign Language and Filipino Sign Language, with different hand shapes and skin tones.
+- [Sign_language Object Detection Dataset](^13^): This dataset contains 1,440 images of 26 letters in American Sign Language, with different hand shapes and skin tones.
 
-## Dataset Details
+The images are in JPG format and the annotations are in COCO JSON format.
 
-### Dataset Description
+Curated by: Roboflow users
+License: Public Domain
+Repository: [Roboflow Universe](^17^)
+Uses
+Direct Use
+This dataset can be used to train or evaluate a computer vision model that can detect and recognize sign language letters from images. Such a model can be useful for applications such as sign language translation, education, and accessibility.
 
-<!-- Provide a longer summary of what this dataset is. -->
+Dataset Structure
+The dataset consists of 3878 images and a JSON file with the annotations. The images are divided into train, test, and valid splits. The JSON file contains the following fields:
 
-{{ dataset_description | default("", true) }}
+- info: a dictionary with information about the dataset, such as version, description, and URL.
+- licenses: a list of dictionaries with information about the licenses of the images, such as name, URL, and id.
+- images: a list of dictionaries with information about the images, such as file_name, height, width, id, and license.
+- annotations: a list of dictionaries with information about the annotations, such as image_id, category_id, bbox, area, id, and segmentation.
+- categories: a list of dictionaries with information about the categories, such as name, id, and supercategory.
 
-- **Curated by:** {{ curators | default("[More Information Needed]", true)}}
-- **License:** {{ license | default("[More Information Needed]", true)}}
+Dataset Creation
+Source Data
+Data Collection and Processing
+The data was collected and processed by the Roboflow users who created and shared the datasets. The data sources are:
 
-### Dataset Sources [optional]
+- [American Sign Language Letters Object Detection Dataset](^5^): The images were collected from various sources, such as YouTube videos, Google Images, and personal photos. The images were resized, cropped, and augmented using Roboflow. The annotations were created using Roboflow Annotate.
+- [ASL And FSL combo Object Detection Dataset](^1^): The images were collected from various sources, such as YouTube videos, Google Images, and personal photos. The images were resized, cropped, and augmented using Roboflow. The annotations were created using Roboflow Annotate.
+- [Sign_language Object Detection Dataset](^13^): The images were collected from various sources, such as YouTube videos, Google Images, and personal photos. The images were resized, cropped, and augmented using Roboflow. The annotations were created using Roboflow Annotate.
 
-<!-- Provide the basic links for the dataset. -->
+Features and the target
+The features are the images of hand signs for the letters of the alphabet in ASL and FSL. The target is the bounding box and the label of the sign language letter in each image.
 
-- **Repository:** {{ repo | default("[More Information Needed]", true)}}
-- **Paper [optional]:** {{ paper | default("[More Information Needed]", true)}}
-- **Demo [optional]:** {{ demo | default("[More Information Needed]", true)}}
+Annotation process
+The annotations were created using Roboflow Annotate, a web-based tool that allows users to draw bounding boxes and assign labels to the objects in the images.
 
-## Uses
+Who are the annotators?
+The annotators are the Roboflow users who created and shared the datasets.
 
-<!-- Address questions around how the dataset is intended to be used. -->
+Bias, Risks, and Limitations
+Some possible biases, risks, and limitations of this dataset are:
 
-### Direct Use
-
-<!-- This section describes suitable use cases for the dataset. -->
-
-{{ direct_use | default("[More Information Needed]", true)}}
-
-
-## Dataset Structure
-
-<!-- This section provides a description of the dataset fields, and additional information about the dataset structure such as criteria used to create the splits, relationships between data points, etc. -->
-
-{{ dataset_structure | default("[More Information Needed]", true)}}
-
-## Dataset Creation
-
-### Source Data
-
-<!-- This section describes the source data (e.g. news text and headlines, social media posts, translated sentences, ...). -->
-
-#### Data Collection and Processing
-
-<!-- This section describes the data collection and processing process such as data selection criteria, filtering and normalization methods, tools and libraries used, etc. -->
-
-{{ data_collection_and_processing_section | default("[More Information Needed]", true)}}
-
-#### Features and the target
-
-<!-- This section describes the features of the dataset and the target of the project -->
-
-### Annotations [optional]
-
-<!-- If the dataset contains annotations which are not part of the initial data collection, use this section to describe them. -->
-
-#### Annotation process
-
-<!-- This section describes the annotation process such as annotation tools used in the process, the amount of data annotated, annotation guidelines provided to the annotators, interannotator statistics, annotation validation, etc. -->
-
-{{ annotation_process_section | default("[More Information Needed]", true)}}
-
-#### Who are the annotators?
-
-<!-- This section describes the people or systems who created the annotations. -->
-
-{{ who_are_annotators_section | default("[More Information Needed]", true)}}
+- The dataset may not be representative of the diversity of sign language users, such as age, gender, ethnicity, and region.
+- The dataset may not cover all the variations and nuances of sign language, such as hand shape, orientation, movement, and facial expression.
+- The dataset may contain errors or inconsistencies in the annotations, such as missing, overlapping, or incorrect bounding boxes or labels.
+- The dataset may not be suitable for some applications or domains, such as real-time or low-resource settings, due to the size, quality, or format of the images or annotations.
 
 
-## Bias, Risks, and Limitations
-
-<!-- This section is meant to convey both technical and sociotechnical limitations. -->
-
-{{ bias_risks_limitations | default("[More Information Needed]", true)}}
-
-
-## Citation [optional]
-
-<!-- If there is a paper or blog post introducing the dataset, the APA and Bibtex information for that should go in this section. -->
-
+Source: 
+(1) American Sign Language Letters Object Detection Dataset - Roboflow. https://public.roboflow.com/object-detection/american-sign-language-letters.
+(2) ASL And FSL combo Object Detection Dataset by Hand signs. https://universe.roboflow.com/hand-signs-9v6jr/asl-and-fsl-combo.
+(3) Sign_language Computer Vision Project - universe.roboflow.com. https://universe.roboflow.com/tfod-p4luj/sign_language-acf74.
