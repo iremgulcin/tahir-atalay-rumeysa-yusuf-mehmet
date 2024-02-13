@@ -11,6 +11,6 @@ The aim of this project was to develop an application that can translate America
 * Our app helps to achieve SDG 4.5 by enabling deaf and hard-of-hearing students to access quality education and communicate with their peers and teachers.
 2. SDG 10.3 mission is: "Promote equal opportunity and fight discrimination through laws and policies."​
 - Our app helps to achieve SDG 10.3 by empowering deaf and hard-of-hearing people to overcome communication barriers and access equal opportunities in society.
-# OUR FRAMEWORK
-
+# Our Framework
+![](https://github.com/iremgulcin/tahir-atalay-rumeysa-yusuf-mehmet/blob/main/framework.png)
 
