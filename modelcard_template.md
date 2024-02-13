@@ -13,7 +13,7 @@ This model is an object detection model that can recognize 26 letters of the Ame
 
 <!-- Provide a longer summary of what this model is. -->
 
-This model is based on the yolov8s model from ultralytics, which is pretrained on the coco dataset. The model is finetuned on three datasets of American Sign Language letters, with a total of 6429 images for training. The model can detect and localize the hand gestures for each letter, and output the bounding box coordinates and the class label. The model is intended to be used for real-time sign language detection on an app.
+This model is based on the yolov8s model from ultralytics, which is pretrained on the coco dataset. The model is finetuned on three datasets of American Sign Language letters, with a total of 6455  images for training. The model can detect and localize the hand gestures for each letter, and output the bounding box coordinates and the class label. The model is intended to be used for real-time sign language detection on an app.
 
 - **Developed by:** Atalay Denknalbant, Ahmet Tahir Manzak
 - **Model date:** February 6 2024
@@ -97,7 +97,7 @@ The model is trained on three datasets of American Sign Language letters, which 
 - [ASL and FSL Combo](https://universe.roboflow.com/hand-signs-9v6jr/asl-and-fsl-combo): This dataset contains 2128 images of 26 letters in American Sign Language and Filipino Sign Language, with different hand shapes and skin tones.
 - [Sign Language](https://universe.roboflow.com/tfod-p4luj/sign_language-acf74): This dataset contains 5121 images of 26 letters in American Sign Language, with different hand shapes and skin tones.
 
-The total size of the training data is 6429 images. No preprocessing or filtering was done on the datasets.
+The total size of the training data is 6455 images. No preprocessing or filtering was done on the datasets.
 
 ### Training Procedure
 
@@ -119,7 +119,7 @@ The total size of the training data is 6429 images. No preprocessing or filterin
 
 <!-- This should link to a Dataset Card if possible. -->
 
-The testing data is randomly selected from the same datasets as the training data, with a size of 144 images for testing and 263 images for validation.
+The testing data is randomly selected from the same datasets as the training data, with a size of 149 images for testing and 276 images for validation.
 
 #### Factors
 
