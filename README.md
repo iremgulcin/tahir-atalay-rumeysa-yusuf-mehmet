@@ -13,4 +13,10 @@ The aim of this project was to develop an application that can translate America
 - Our app helps to achieve SDG 10.3 by empowering deaf and hard-of-hearing people to overcome communication barriers and access equal opportunities in society.
 # Our Framework
 ![](https://github.com/iremgulcin/tahir-atalay-rumeysa-yusuf-mehmet/blob/main/framework.png)
-
+# DATASET
+![](https://github.com/iremgulcin/tahir-atalay-rumeysa-yusuf-mehmet/blob/main/Dataset.png)
+* Available on Roboflow Universe:​ 6879 total image. 6455 train – 276 val – 148 test.​
+* 26 Class: A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z ​
+* 3 Different Datasets​
+* Images dimension: ​
+(384, 384), (416,416) (640,480)
