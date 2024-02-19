@@ -105,7 +105,6 @@ The total size of the training data is 6455 images. No preprocessing or filterin
 
 #### Training Hyperparameters
 
-- **Training regime:** fp16 mixed precision
 - **Optimization Algorithm:** SGD
 - **Training Parameters:** imgsz=640, dropout=0.5
 
