@@ -29,7 +29,7 @@ This model is based on the yolov8s model from ultralytics, which is pretrained o
 
 <!-- This section is for the model use without fine-tuning or plugging into a larger ecosystem/app. -->
 
-The model can be used directly for sign language detection on an app, where the user can input an image of their hand gesture and get the corresponding letter as the output. The app can also provide feedback and guidance on how to improve the gesture accuracy and clarity.
+The model can be used directly for sign language detection on an app, where the user can input an image of their hand gesture and get the corresponding letter as the output. 
 
 ### Out-of-Scope Use
 
@@ -106,8 +106,8 @@ The total size of the training data is 6455 images. No preprocessing or filterin
 #### Training Hyperparameters
 
 - **Training regime:** fp16 mixed precision
-- **Optimization Algorithm:** AdamW
-- **Training Parameters:** imgsz=416, dropout=0.5
+- **Optimization Algorithm:** SGD
+- **Training Parameters:** imgsz=640, dropout=0.5
 
 ## Evaluation
 
@@ -135,7 +135,6 @@ The factors that could affect the model performance are:
 The metrics used to evaluate the model are:
 
 - mAP50: the mean average precision at IoU (Intersection over Union) of 0.5
-- mAP50-95: the mean average precision at IoU of 0.5 to 0.95 with a step size of 0.05
 
 ### Results
 
@@ -177,7 +176,7 @@ The model achieves high performance on most of the letters, with mAP50 above 0.9
 
 ### Model Architecture and Objective
 
-The model architecture is based on the yolov8x model from ultralytics, which is a state-of-the-art object detection model that uses a single-stage detector with a deep convolutional neural network. The model has 8 output layers, each with 3 anchor boxes, for a total of 24 anchors. The model outputs the bounding box coordinates, the class label, and the confidence score for each detected object.
+The model architecture is based on the yolov8s model from ultralytics, which is a state-of-the-art object detection model that uses deep convolutional neural network. The model has 1 output layers with shape []. The model outputs the bounding box coordinates, the class label, and the confidence score for each detected object.
 
 The model objective is to minimize the loss function, which consists of four components: the box loss, the objectness loss, the classification loss, and the label smoothing loss. The box loss measures the difference between the predicted and the target bounding box coordinates, using the generalized IoU metric. The objectness loss measures the difference between the predicted and the target objectness score, which indicates the probability of an object being present in the anchor box. The classification loss measures the difference between the predicted and the target class label, using the cross-entropy metric. The label smoothing loss adds a small amount of noise to the target class label, to prevent overfitting and improve generalization.
 
