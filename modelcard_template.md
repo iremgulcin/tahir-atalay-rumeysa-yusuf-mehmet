@@ -176,7 +176,7 @@ The model achieves high performance on most of the letters, with mAP50 above 0.9
 
 ### Model Architecture and Objective
 
-The model architecture is based on the yolov8s model from ultralytics, which is a state-of-the-art object detection model that uses deep convolutional neural network. The model has 1 output layers with shape []. The model outputs the bounding box coordinates, the class label, and the confidence score for each detected object.
+The model architecture is based on the yolov8s model from ultralytics, which is a state-of-the-art object detection model that uses deep convolutional neural network. The model has 1 output layer with shape [1,30,3549]. The model outputs the bounding box coordinates, the class label, and the confidence score for each detected object.
 
 The model objective is to minimize the loss function, which consists of four components: the box loss, the objectness loss, the classification loss, and the label smoothing loss. The box loss measures the difference between the predicted and the target bounding box coordinates, using the generalized IoU metric. The objectness loss measures the difference between the predicted and the target objectness score, which indicates the probability of an object being present in the anchor box. The classification loss measures the difference between the predicted and the target class label, using the cross-entropy metric. The label smoothing loss adds a small amount of noise to the target class label, to prevent overfitting and improve generalization.
 
