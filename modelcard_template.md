@@ -1,7 +1,7 @@
 ---
 # MODEL CARD
 
-# Model Card for yolov8_asl_s
+# Model Card for yolov9_asl_s
 
 <!-- Provide a quick summary of what the model is/does. -->
 
@@ -13,13 +13,13 @@ This model is an object detection model that can recognize 26 letters of the Ame
 
 <!-- Provide a longer summary of what this model is. -->
 
-This model is based on the yolov8s model from ultralytics, which is pretrained on the coco dataset. The model is finetuned on three datasets of American Sign Language letters, with a total of 6455  images for training. The model can detect and localize the hand gestures for each letter, and output the bounding box coordinates and the class label. The model is intended to be used for real-time sign language detection on an app.
+This model is based on the yolov9s model from ultralytics, which is pretrained on the coco dataset. The model is finetuned on three datasets of American Sign Language letters, with a total of 6455  images for training. The model can detect and localize the hand gestures for each letter, and output the bounding box coordinates and the class label. The model is intended to be used for real-time sign language detection on an app.
 
 - **Developed by:** Atalay Denknalbant, Ahmet Tahir Manzak
 - **Model date:** February 6 2024
 - **Model type:** Object Detection
 - **Language(s):** American Sign Language
-- **Finetuned from model:** yolov8s pretrained on coco dataset
+- **Finetuned from model:** yolov9s pretrained on coco dataset
 
 ## Uses
 
@@ -70,7 +70,7 @@ import cv2
 from PIL import Image
 
 # Load the model
-model = torch.hub.load('ultralytics/yolov8', 'custom', path='yolov8_asl_s.pt')
+model = torch.hub.load('ultralytics/yolov9', 'custom', path='yolov9_asl_s.pt')
 
 # Load the image
 img = Image.open('test.jpg')
@@ -139,35 +139,36 @@ The metrics used to evaluate the model are:
 
 The results of the model evaluation are shown in the table below:
 
-| Class | Box(P) |  R   | mAP50 |
-|-------|--------|------|-------|
-| all   | 0.957  | 0.941| 0.985 |
-|   A   | 0.952  | 1    | 0.995 |
-|   B   | 0.983  | 0.778| 0.94  |
-|   C   | 0.913  | 1    | 0.995 |
-|   D   | 0.99   | 0.9  | 0.966 |
-|   E   | 0.79   | 1    | 0.995 |
-|   F   | 0.85   | 1    | 0.995 |
-|   G   | 0.97   | 1    | 0.995 |
-|   H   | 0.979  | 1    | 0.995 |
-|   I   | 0.863  | 0.833| 0.864 |
-|   J   | 1      | 0.791| 0.995 |
-|   K   | 1      | 0.922| 0.995 |
-|   L   | 0.96   | 1    | 0.995 |
-|   M   | 1      | 0.815| 0.982 |
-|   N   | 0.967  | 1    | 0.995 |
-|   O   | 1      | 0.915| 0.995 |
-|   P   | 1      | 0.928| 0.995 |
-|   Q   | 0.989  | 1    | 0.995 |
-|   R   | 1      | 0.864| 0.988 |
-|   S   | 0.985  | 1    | 0.995 |
-|   T   | 1      | 0.903| 0.995 |
-|   U   | 0.816  | 1    | 0.988 |
-|   V   | 0.932  | 0.941| 0.983 |
-|   W   | 0.997  | 1    | 0.995 |
-|   X   | 0.969  | 1    | 0.995 |
-|   Y   | 1      | 0.873| 0.995 |
-|   Z   | 0.985  | 1    | 0.995 |
+| Class | Box(P) |   R   | mAP50 |
+|-------|--------|-------|-------|
+| all   | 0.967  | 0.97  | 0.992 |
+| A     | 0.998  |   1   | 0.995 |
+| B     | 0.93   |   1   | 0.995 |
+| C     | 0.985  |   1   | 0.995 |
+| D     | 0.991  |   1   | 0.995 |
+| E     | 0.974  |   1   | 0.995 |
+| F     | 0.986  |   1   | 0.995 |
+| G     | 0.826  |   1   | 0.995 |
+| H     | 0.994  | 0.889 | 0.956 |
+| I     | 0.774  |   1   | 0.995 |
+| J     | 0.983  |   1   | 0.995 |
+| K     | 0.854  |   1   | 0.995 |
+| L     | 0.989  |   1   | 0.995 |
+| M     | 0.997  | 0.875 | 0.971 |
+| N     | 0.963  |   1   | 0.995 |
+| O     | 0.978  |   1   | 0.995 |
+| P     |   1    | 0.897 | 0.995 |
+| Q     | 0.967  |   1   | 0.995 |
+| R     |   1    | 0.986 | 0.995 |
+| S     | 0.992  |   1   | 0.995 |
+| T     | 0.996  |   1   | 0.995 |
+| U     |   1    | 0.935 | 0.995 |
+| V     |   1    | 0.884 | 0.991 |
+| W     | 0.996  |   1   | 0.995 |
+| X     |   1    | 0.894 | 0.995 |
+| Y     |   1    | 0.855 | 0.995 |
+| Z     | 0.981  |   1   | 0.995 |
+
 
 
 
@@ -177,7 +178,7 @@ The model achieves high performance on most of the letters, with mAP50 above 0.9
 
 ### Model Architecture and Objective
 
-The model architecture is based on the yolov8s model from ultralytics, which is a state-of-the-art object detection model that uses deep convolutional neural network. The model has 1 output layer with shape [1,30,3549]. The model outputs the bounding box coordinates, the class label, and the confidence score for each detected object.
+The model architecture is based on the yolov9s model from ultralytics, which is a state-of-the-art object detection model that uses deep convolutional neural network. The model has 1 output layer with shape [1,30,3549]. The model outputs the bounding box coordinates, the class label, and the confidence score for each detected object.
 
 The model objective is to minimize the loss function, which consists of four components: the box loss, the objectness loss, the classification loss, and the label smoothing loss. The box loss measures the difference between the predicted and the target bounding box coordinates, using the generalized IoU metric. The objectness loss measures the difference between the predicted and the target objectness score, which indicates the probability of an object being present in the anchor box. The classification loss measures the difference between the predicted and the target class label, using the cross-entropy metric. The label smoothing loss adds a small amount of noise to the target class label, to prevent overfitting and improve generalization.
 
@@ -201,7 +202,7 @@ The software requirements for the model are:
 - Python 3.8 or higher
 - PyTorch 1.9 or higher
 - Torchvision 0.10 or higher
-- Ultralytics yolov8 0.0.1 or higher
+- Ultralytics yolov9 0.0.1 or higher
 - OpenCV 4.5 or higher
 - PIL 8.3 or higher
 
