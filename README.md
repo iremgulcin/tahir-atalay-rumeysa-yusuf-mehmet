@@ -1,7 +1,8 @@
 # Sign Language Translator
 ![](https://github.com/iremgulcin/tahir-atalay-rumeysa-yusuf-mehmet/blob/main/readme_images/asl_demo.gif)
 # Overview
-![](https://github.com/iremgulcin/tahir-atalay-rumeysa-yusuf-mehmet/blob/main/readme_images/asl.png)
+
+<img src="https://github.com/iremgulcin/tahir-atalay-rumeysa-yusuf-mehmet/blob/main/readme_images/asl.png" width="400" />
 
 The aim of this project was to develop an application that can translate American Sign Language (ASL) into written language, using object detection techniques and multiple data sources.​
 # Defining The Problem ​And The Solution
