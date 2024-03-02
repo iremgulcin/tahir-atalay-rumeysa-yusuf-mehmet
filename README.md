@@ -58,4 +58,4 @@ We achieved high values for all these metrics, as shown by the table on the left
 ![](https://github.com/iremgulcin/tahir-atalay-rumeysa-yusuf-mehmet/blob/main/readme_images/summary.png)
 
 # Citation 
-- Glenn Jocher, Alex Stoken, Jirka Borovec, NanoCode012, ChristopherSTAN, Laughing, lorenzomammana, tkianai, Adam Hogan, Mikhail Grankin, Ayush Chaurasia, Yonghye Kwon, Stijn van der Linden, Taha M. Khan, Rubén Rodríguez, Chanoh Park, Joseph M. Rocca, Rushil Anirudh, Hamid Rezatofighi, and Wang Xinyu. (2021). YOLOv5: State-of-the-art object detection. arXiv preprint arXiv:2106.04161.
+- Jocher, G., Chaurasia, A., & Qiu, J. (2023). Ultralytics YOLO [Computer software]. https://github.com/ultralytics/ultralytics
