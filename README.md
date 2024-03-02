@@ -54,7 +54,7 @@ We achieved high values for all these metrics, as shown by the table on the left
 <h3><b>Here are the results of labels we predicted by using our model. As you can see our model didn't miss any letter at given dataset.</b></h3>
 
 # Demo
-
+![](https://github.com/iremgulcin/tahir-atalay-rumeysa-yusuf-mehmet/blob/main/readme_images/demo_7sec.gif)
 
 # Summary
 ## Our project has the following aspects:
